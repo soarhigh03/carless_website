@@ -1,0 +1,57 @@
+import React, { useState } from 'react';
+import { submitMeetup } from '../api/content';
+
+export default function ContactForm() {
+  const [form, setForm] = useState({ name: '', phone: '', date: '', car_type: '' });
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    await submitMeetup(form);
+    setSent(true);
+  };
+
+  return (
+    <section id="contact" className="py-12 bg-gray-50">
+      <div className="max-w-lg mx-auto px-4">
+        <h2 className="text-2xl font-bold mb-6 text-center">미팅 신청</h2>
+        {sent ? (
+          <p className="text-center text-green-600 font-semibold"> 요청이 전송되었습니다!</p>
+        ) : (
+          <form onSubmit={handleSubmit} className="grid gap-4">
+            <input
+              type="text"
+              placeholder="이름"
+              value={form.name}
+              onChange={e => setForm({ ...form, name: e.target.value })}
+              className="input"
+              required
+            />
+            <input
+              type="tel"
+              placeholder="연락처"
+              value={form.phone}
+              onChange={e => setForm({ ...form, phone: e.target.value })}
+              className="input"
+              required
+            />
+            <input
+              type="date"
+              value={form.date}
+              onChange={e => setForm({ ...form, date: e.target.value })}
+              className="input"
+            />
+            <input
+              type="text"
+              placeholder="차종 (선택)"
+              value={form.car_type}
+              onChange={e => setForm({ ...form, car_type: e.target.value })}
+              className="input"
+            />
+            <button type="submit" className="bg-secondary text-white py-3 rounded-lg">보내기</button>
+          </form>
+        )}
+      </div>
+    </section>
+  );
+}
