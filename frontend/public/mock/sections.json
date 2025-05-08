@@ -5,5 +5,27 @@
       "title": "부담은 마이너스, 만족은 플러스!",
       "subtitle": "포터Ⅱ 보증금 0원",
       "image": "/images/hero-truck.png"
+    },
+    {
+      "id": 2,
+      "slug": "benefit-easy",
+      "title": "쉽고!",
+      "body": "할부, 리스, 렌트… 어떤 방법이든 한 번에 비교하고 결정!",
+      "image": "/images/benefit-easy.png"
+    },
+    {
+      "id": 3,
+      "slug": "benefit-fast",
+      "title": "빠르고!",
+      "body": "계약부터 출고까지 48시간 컷—대기 없는 초고속 진행.",
+      "image": "/images/benefit-fast.png"
+    },
+    {
+      "id": 4,
+      "slug": "benefit-cheap",
+      "title": "싸게!",
+      "body": "제휴 금융사 20곳 견적 동시 비교, 최저가 자동 선택.",
+      "image": "/images/benefit-cheap.png"
     }
   ]
+  

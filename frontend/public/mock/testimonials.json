@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "name": "이재훈",
+      "summary": "저신용자도 가능하다고 해서 상담했는데 진짜 바로 출고됐어요!",
+      "photo": "/images/testimonial-jane.jpg",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "박소연",
+      "summary": "카리스카렌트 직원분들 덕분에 복잡한 서류 처리 전부 해결했습니다.",
+      "photo": "/images/testimonial-john.jpg",
+      "rating": 5
+    }
+  ]
+  
