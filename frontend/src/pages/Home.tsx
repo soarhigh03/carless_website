@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+
 import {
   getSections,
   getTestimonials,
@@ -11,6 +12,7 @@ import BenefitCard from '../components/BenefitCard';
 import CTA from '../components/CTA';
 import TestimonialCarousel from '../components/TestimonialCarousel';
 import ContactForm from '../components/ContactForm';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function Home() {
@@ -41,10 +43,14 @@ export default function Home() {
 
   return (
     <>
-      {/* 1 · Hero banner */}
-      {hero && <Hero {...hero} />}
-
-      {/* 2 · Benefit cards */}
+    
+    <Header />
+    
+    
+    {/* 1 · Hero banner */}
+    {hero && (<Hero {...hero} />)}
+      
+    {/* 2 · Benefit cards */}
         {benefits.length > 0 && (
         <section className="max-w-6xl mx-auto grid gap-6 px-4 my-12 sm:grid-cols-2 md:grid-cols-3">
             {benefits.map((b) => (
@@ -65,6 +71,7 @@ export default function Home() {
 
       {/* 6 · Footer */}
       <Footer />
+      
     </>
   );
 }
