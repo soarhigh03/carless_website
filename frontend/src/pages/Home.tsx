@@ -10,7 +10,6 @@ import {
 import Hero from '../components/Hero';
 import BenefitCard from '../components/BenefitCard';
 import CTA from '../components/CTA';
-import TestimonialCarousel from '../components/TestimonialCarousel';
 import ContactForm from '../components/ContactForm';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
