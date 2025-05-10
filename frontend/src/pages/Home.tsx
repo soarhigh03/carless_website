@@ -18,6 +18,7 @@ import Sec3 from '../components/Sec3';
 import Sec4 from '../components/Sec4';
 import SocialBanner from '../components/SocialBanner';
 import Sec7 from '../components/Sec7';
+import Review from '../components/Review';
 
 export default function Home() {
   const [sections, setSections] = useState<Section[]>([]);
@@ -64,18 +65,15 @@ export default function Home() {
     <Sec4 />
     <SocialBanner />
 
-      {/* 3 · Call-to-action strip */}
-      <CTA />
+    
 
-      {/* 4 · Testimonials */}
-      <TestimonialCarousel items={testimonials} />
+    
 
-      {/* 5 · Contact form */}
-      <ContactForm />
-      <Sec7 />
+    <ContactForm />
+    <Sec7 />
+    <Review />
 
-      {/* 6 · Footer */}
-      <Footer />
+    <Footer />
       
     </>
   );
