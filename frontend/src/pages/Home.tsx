@@ -19,6 +19,8 @@ import Sec4 from '../components/Sec4';
 import SocialBanner from '../components/SocialBanner';
 import Sec7 from '../components/Sec7';
 import Review from '../components/Review';
+import Sec6 from '../components/Sec6';
+import FloatingPanel from '../components/FloatingPanel';
 
 export default function Home() {
   const [sections, setSections] = useState<Section[]>([]);
@@ -34,7 +36,6 @@ export default function Home() {
   }, []);
 
   if (loading) {
-    /* simple splash—replace with skeleton loaders later if you like */
     return (
       <div className="min-h-screen flex items-center justify-center">
         <p className="text-gray-400">로딩 중…</p>
@@ -42,7 +43,6 @@ export default function Home() {
     );
   }
 
-  /* slice the fetched data */
   const hero = sections.find((s) => s.slug === 'hero');
   const benefits = sections.filter((s) => s.slug.startsWith('benefit-'));
 
@@ -50,6 +50,7 @@ export default function Home() {
     <>
     
     <Header />
+    <FloatingPanel />
     
     {hero && (<Hero {...hero} />)}
       
@@ -62,14 +63,19 @@ export default function Home() {
     )}
 
     <Sec3 />
+    
+
     <Sec4 />
     <SocialBanner />
 
     
 
     
+    <Sec6 />
+    <section id="contact-form">
+        <ContactForm />
+    </section>
 
-    <ContactForm />
     <Sec7 />
     <Review />
 
