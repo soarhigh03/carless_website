@@ -17,6 +17,7 @@ import Footer from '../components/Footer';
 import Sec3 from '../components/Sec3';
 import Sec4 from '../components/Sec4';
 import SocialBanner from '../components/SocialBanner';
+import Sec7 from '../components/Sec7';
 
 export default function Home() {
   const [sections, setSections] = useState<Section[]>([]);
@@ -71,6 +72,7 @@ export default function Home() {
 
       {/* 5 · Contact form */}
       <ContactForm />
+      <Sec7 />
 
       {/* 6 · Footer */}
       <Footer />
