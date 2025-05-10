@@ -14,6 +14,9 @@ import TestimonialCarousel from '../components/TestimonialCarousel';
 import ContactForm from '../components/ContactForm';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Sec3 from '../components/Sec3';
+import Sec4 from '../components/Sec4';
+import SocialBanner from '../components/SocialBanner';
 
 export default function Home() {
   const [sections, setSections] = useState<Section[]>([]);
@@ -46,19 +49,19 @@ export default function Home() {
     
     <Header />
     
-    
-    {/* 1 · Hero banner */}
     {hero && (<Hero {...hero} />)}
       
-    {/* 2 · Benefit cards */}
-        {benefits.length > 0 && (
-        <section className="max-w-6xl mx-auto grid gap-6 px-4 my-12 sm:grid-cols-2 md:grid-cols-3">
-            {benefits.map((b) => (
-            <BenefitCard key={b.id} {...b} />
-            ))}
-        </section>
-        )}
+    {benefits.length > 0 && (
+    <section className="max-w-6xl mx-auto grid gap-6 px-4 my-12 sm:grid-cols-2 md:grid-cols-3">
+        {benefits.map((b) => (
+        <BenefitCard key={b.id} {...b} />
+        ))}
+    </section>
+    )}
 
+    <Sec3 />
+    <Sec4 />
+    <SocialBanner />
 
       {/* 3 · Call-to-action strip */}
       <CTA />
