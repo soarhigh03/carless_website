@@ -1,4 +1,5 @@
 import { api } from './base';
+import axios from 'axios';
 
 export interface Section {
   id: number;
@@ -30,8 +31,18 @@ export function getTestimonials(): Promise<Testimonial[]> {
     : api.get('testimonials/').then(r => r.data.results);
 }
 
-export function submitMeetup(payload: unknown) {
-  return MOCK
-    ? Promise.resolve({ ok: true })
-    : api.post('meetup/', payload).then(r => r.data);
+export function submitMeetup(payload: {
+  name: string;
+  phone: string;
+  car_type?: string;
+  content?: string;
+}) {
+  // ✅ car_type과 content를 하나의 message로 조합
+  const message = `${payload.car_type ? `[차종] ${payload.car_type}\n` : ''}${payload.content ?? ''}`.trim();
+
+  return api.post('inquiries/', {
+    name: payload.name,
+    phone: payload.phone,
+    message: message
+  }).then(r => r.data);
 }

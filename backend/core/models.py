@@ -1,23 +1,94 @@
 from django.db import models
+from .supabase_upload import upload_to_supabase
 
 class Section(models.Model):
     slug = models.SlugField(unique=True)
     title = models.CharField(max_length=200)
     subtitle = models.CharField(max_length=200, blank=True, null=True)
     body = models.TextField(blank=True, null=True)
-    image_url = models.URLField()
+    image_url = models.URLField(help_text="Supabase Storage에 업로드된 이미지 URL")
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.title
+
 class Testimonial(models.Model):
-    name = models.CharField(max_length=100)
+    stars = models.IntegerField(default=5)
+    car_name = models.CharField(max_length=255)
     content = models.TextField()
-    rating = models.IntegerField(default=5)
+    car_image_url = models.URLField(blank=True, null=True)
+
+    # ✅ 업로드용 필드 추가
+    photo_file = models.FileField(upload_to='temp/', blank=True, null=True)
+
+    # ✅ Supabase URL 저장용
     photo = models.URLField(blank=True, null=True)
-    created_at = models.DateTimeField(auto_now_add=True)
+
+    price = models.CharField(max_length=100)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.car_name
+
+    def save(self, *args, **kwargs):
+        if self.photo_file:
+            # pk가 아직 없을 수 있으므로 먼저 저장 (create 시)
+            if not self.pk:
+                super().save(*args, **kwargs)
+
+            filename = f"review{self.pk}"
+            self.photo = upload_to_supabase(self.photo_file, filename)
+
+            # 캐시 무효화를 위한 updated_at 강제 갱신
+            from django.utils.timezone import now
+            self.updated_at = now()
+
+        super().save(*args, **kwargs)
+
+
 
 class Inquiry(models.Model):
     name = models.CharField(max_length=100)
     phone = models.CharField(max_length=20)
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
-    is_sent_kakao = models.BooleanField(default=False)
+    is_sent_email = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"[{self.name}] {self.phone}"
+
+class Benefit(models.Model):
+    image_url = models.URLField()
+    text = models.TextField()
+    order = models.PositiveIntegerField(default=0)
+    updated_at = models.DateTimeField(auto_now=True) 
+
+    def __str__(self):
+        return f"{self.order}. {self.text[:20]}"
+    
+
+REPLACEABLE_IMAGE_NAMES = [
+    "sec6_1", "sec6_2", "sec6_3",
+    "review1", "review2", "review3",
+    "reviewcar1", "reviewcar2", "reviewcar3",
+]
+
+class ImageSlot(models.Model):
+    name = models.CharField(
+        max_length=50,
+        choices=[(n, n) for n in REPLACEABLE_IMAGE_NAMES],
+        unique=True,
+        help_text="교체할 이미지 이름 (확장자 제외)"
+    )
+    file = models.FileField(upload_to='temp/')
+    url = models.URLField(blank=True, null=True)
+
+    def save(self, *args, **kwargs):
+        if self.file:
+            # ✅ 업로드 시 확장자 포함해서 저장하고 기존 확장자 파일 모두 삭제
+            self.url = upload_to_supabase(self.file, self.name)
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.name
+    updated_at = models.DateTimeField(auto_now=True)
