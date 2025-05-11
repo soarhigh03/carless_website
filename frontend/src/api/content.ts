@@ -27,7 +27,7 @@ export function getSections(): Promise<Section[]> {
 export function getTestimonials(): Promise<Testimonial[]> {
   return MOCK
     ? fetch('/mock/testimonials.json').then(r => r.json())
-    : api.get('testimonials/').then(r => r.data);
+    : api.get('testimonials/').then(r => r.data.results);
 }
 
 export function submitMeetup(payload: unknown) {

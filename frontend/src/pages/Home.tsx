@@ -20,13 +20,21 @@ export default function Home() {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    Promise.all([getSections(), getTestimonials()]).then(([s, t]) => {
+useEffect(() => {
+  async function loadData() {
+    try {
+      const [s, t] = await Promise.all([getSections(), getTestimonials()]);
       setSections(s);
       setTestimonials(t);
+    } catch (err) {
+      console.error('API 호출 실패:', err);
+    } finally {
       setLoading(false);
-    });
-  }, []);
+    }
+  }
+
+  loadData();
+}, []);
 
   if (loading) {
     /* simple splash—replace with skeleton loaders later if you like */
@@ -64,7 +72,7 @@ export default function Home() {
       <CTA />
 
       {/* 4 · Testimonials */}
-      <TestimonialCarousel items={testimonials} />
+      <TestimonialCarousel items={testimonials || []} />
 
       {/* 5 · Contact form */}
       <ContactForm />
