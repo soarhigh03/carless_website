@@ -9,10 +9,11 @@ import {
 
 import Hero from '../components/Hero';
 import BenefitCard from '../components/BenefitCard';
-import CTA from '../components/CTA';
 import ContactForm from '../components/ContactForm';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Sec1 from '../components/Sec1';
+import Sec2 from '../components/Sec2';
 import Sec3 from '../components/Sec3';
 import Sec4 from '../components/Sec4';
 import SocialBanner from '../components/SocialBanner';
@@ -59,15 +60,8 @@ useEffect(() => {
     <Header />
     <FloatingPanel />
     
-    {hero && (<Hero {...hero} />)}
-      
-    {benefits.length > 0 && (
-    <section className="max-w-6xl mx-auto grid gap-6 px-4 my-12 sm:grid-cols-2 md:grid-cols-3">
-        {benefits.map((b) => (
-        <BenefitCard key={b.id} {...b} />
-        ))}
-    </section>
-    )}
+    <Sec1 />
+    <Sec2 />
 
     <Sec3 />
     
