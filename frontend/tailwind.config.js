@@ -12,6 +12,9 @@ module.exports = {
         primary: '#fcd32a',   // yellow accent used in design mockup
         secondary: '#0052a4', // deep blue accent
     },
+    fontFamily: {
+      gmarket: ['GmarketSans', 'sans-serif'],
+    },
   },
   plugins: [],
 }

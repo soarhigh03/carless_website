@@ -3,3 +3,29 @@
 @tailwind utilities;
 
 .input { @apply border rounded-lg p-3 w-full; }
+
+@font-face {
+    font-family: 'GmarketSans';
+    src: url('/src/assets/fonts/GmarketSansTTFLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GmarketSans';
+    src: url('/src/assets/fonts/GmarketSansTTFMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GmarketSans';
+    src: url('/src/assets/fonts/GmarketSansTTFBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  * {
+    font-family: 'GmarketSans', sans-serif;
+  }
+  
