@@ -15,7 +15,7 @@ export default function Review() {
   const [reviews, setReviews] = useState<ReviewItem[]>([]);
 
   useEffect(() => {
-    fetch('${import.meta.env.VITE_API_BASE}testimonials/')
+    fetch(`${import.meta.env.VITE_API_BASE}testimonials/`)
       .then(res => res.json())
       .then(data => setReviews(data));
   }, []);
