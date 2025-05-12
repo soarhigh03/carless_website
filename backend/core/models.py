@@ -67,28 +67,38 @@ class Benefit(models.Model):
         return f"{self.order}. {self.text[:20]}"
     
 
-REPLACEABLE_IMAGE_NAMES = [
-    "sec6_1", "sec6_2", "sec6_3",
-    "review1", "review2", "review3",
-    "reviewcar1", "reviewcar2", "reviewcar3",
+REPLACEABLE_IMAGE_CHOICES = [
+    ("sec6_1", "행사 이미지1"),
+    ("sec6_2", "행사 이미지2"),
+    ("sec6_3", "행사 이미지3"),
+    ("review1", "리뷰1 메인 사진"),
+    ("review2", "리뷰2 메인 사진"),
+    ("review3", "리뷰3 메인 사진"),
+    ("reviewcar1", "리뷰1 차량 사진"),
+    ("reviewcar2", "리뷰2 차량 사진"),
+    ("reviewcar3", "리뷰3 차량 사진"),
 ]
 
 class ImageSlot(models.Model):
     name = models.CharField(
         max_length=50,
-        choices=[(n, n) for n in REPLACEABLE_IMAGE_NAMES],
+        choices=REPLACEABLE_IMAGE_CHOICES,
         unique=True,
-        help_text="교체할 이미지 이름 (확장자 제외)"
+        help_text="교체할 이미지 이름 (확장자 제외)",
+        verbose_name="이미지 종류"
     )
     file = models.FileField(upload_to='temp/')
     url = models.URLField(blank=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "이미지 교체"
+        verbose_name_plural = "이미지 교체"
 
     def save(self, *args, **kwargs):
         if self.file:
-            # ✅ 업로드 시 확장자 포함해서 저장하고 기존 확장자 파일 모두 삭제
             self.url = upload_to_supabase(self.file, self.name)
         super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
-    updated_at = models.DateTimeField(auto_now=True)
