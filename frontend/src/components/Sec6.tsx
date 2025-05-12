@@ -12,7 +12,7 @@ export default function Sec6() {
   const [features, setFeatures] = useState<BenefitData[]>([])
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/benefits/')
+    fetch('${import.meta.env.VITE_API_BASE}benefits/')
       .then(res => res.json())
       .then(data => setFeatures(data))
       .catch(err => console.error('Failed to fetch benefits', err))
