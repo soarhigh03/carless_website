@@ -39,7 +39,7 @@ export default function Review() {
           {reviews.map((r, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-xl shadow-sm overflow-hidden border flex flex-col h-[470px]"
+              className="bg-white rounded-xl shadow-sm overflow-hidden border flex flex-col h-[510px]"
             >
               <img
                 src={`${r.photo}?v=${r.updated_at}`}

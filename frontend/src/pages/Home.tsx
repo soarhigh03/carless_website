@@ -59,7 +59,7 @@ useEffect(() => {
     <Header />
     <FloatingPanel />
     
-    {hero && (<Hero {...hero} />)}
+    {hero && <Hero {...{ ...hero, image: hero.image || '' }} />}
       
     {benefits.length > 0 && (
     <section className="max-w-6xl mx-auto grid gap-6 px-4 my-12 sm:grid-cols-2 md:grid-cols-3">
