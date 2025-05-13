@@ -14,6 +14,8 @@ export default function Footer() {
             <span className="text-gray-300">|</span>
           
             <a href="/terms" className="text-gray-600 whitespace-nowrap">이용약관</a>
+            <span className="text-gray-300">|</span>
+            <a href="/admin" className="text-gray-600 whitespace-nowrap">관리자 로그인</a>
           </div>
 
           {/* Company info always below */}

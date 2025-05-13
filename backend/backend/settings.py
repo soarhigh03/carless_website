@@ -4,21 +4,32 @@ from dotenv import load_dotenv
 import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-dotenv_path = BASE_DIR / "backend" / ".env"
+dotenv_path = BASE_DIR / ".env"
+
+ALLOWED_HOSTS = [] 
+
 
 if dotenv_path.exists():
-    load_dotenv(dotenv_path=dotenv_path)
+    load_dotenv(dotenv_path=dotenv_path, override=True)
+    print("✅ .env loaded from:", dotenv_path)
+else:
+    print("❌ .env not found. Make sure to create a .env file in the root directory.")
 # DEBUG 모드 설정
+
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 # SECRET_KEY 설정
 SECRET_KEY = os.getenv("SECRET_KEY", "unsafe-key")
 
+
 # ALLOWED_HOSTS 설정
 if DEBUG:
-    ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+    ALLOWED_HOSTS = ["localhost", "127.0.0.1","clcr.co.kr", "www.clcr.co.kr"]
 else:
     ALLOWED_HOSTS = [h.strip() for h in os.getenv("ALLOWED_HOSTS", "").split(",") if h.strip()]
+
+print(f"📂 BASE_DIR: {BASE_DIR}")
+print(f"🔍 dotenv_path: {dotenv_path}  (exists: {dotenv_path.exists()})")
 
 # ─────────────────────────────────────────────────────────────────────────────
 INSTALLED_APPS = [
