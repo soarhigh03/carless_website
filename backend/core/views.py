@@ -4,6 +4,7 @@ from rest_framework import status, viewsets
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.viewsets import ReadOnlyModelViewSet
+from django.http import JsonResponse
 
 from .models import Section, Testimonial, Benefit, ImageSlot, Inquiry
 from .serializers import (
@@ -56,3 +57,6 @@ class InquiryCreateView(APIView):
 class ImageSlotViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = ImageSlot.objects.all()
     serializer_class = ImageSlotSerializer
+
+def healthcheck(request):
+    return JsonResponse({"status": "ok"})
