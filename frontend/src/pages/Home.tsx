@@ -7,8 +7,6 @@ import {
   type Testimonial,
 } from '../api/content';
 
-import Hero from '../components/Hero';
-import BenefitCard from '../components/BenefitCard';
 import ContactForm from '../components/ContactForm';
 import Header from '../components/Header';
 import Footer from '../components/Footer';

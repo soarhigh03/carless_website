@@ -9,6 +9,7 @@ import { loadGtag } from './analytics';
 
 function App() {
   useEffect(() => {
+    console.log("🚀 App mounted - calling loadGtag()");
     loadGtag();
   }, []);
   return (
