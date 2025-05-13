@@ -39,23 +39,25 @@ export default function Review() {
           {reviews.map((r, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-xl shadow-sm overflow-hidden border flex flex-col h-[470px]"
+              className="bg-white rounded-xl shadow-sm overflow-hidden border flex flex-col"
             >
               <img
                 src={`${r.photo}?v=${r.updated_at}`}
                 alt="review"
                 className="w-full h-auto object-cover"
               />
-              <div className="p-4 flex-1 flex flex-col justify-between">
-                <div>
+              <div className="p-4 flex flex-col grow">
+                {/* 상단: 별점, 차량명, 후기 */}
+                <div className="mb-4">
                   <div className="text-yellow-500 mb-2">{'★★★★★'.slice(0, r.stars)}</div>
                   <h3 className="text-base mb-1">{r.car}</h3>
-                  <p className="text-gray-500 text-sm mb-4 line-clamp-3 h-[4.5em] overflow-hidden">
+                  <p className="text-gray-500 text-sm line-clamp-3">
                     {r.text}
                   </p>
                 </div>
-                <div>
-                  <hr className="my-2" />
+
+                {/* 하단: 차량 정보 (항상 보이게) */}
+                <div className="mt-auto pt-2 border-t">
                   <div className="flex items-center gap-3 mt-2">
                     <img
                       src={`${r.carImage}?v=${r.updated_at}`}
