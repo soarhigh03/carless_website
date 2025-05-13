@@ -12,8 +12,7 @@ export default function Footer() {
             <img src="/images/logo.png" alt="카리스카렌트 로고" className="h-10 w-auto" />
             <a href="/privacy" className="text-red-500 font-semibold whitespace-nowrap">개인정보처리방침</a>
             <span className="text-gray-300">|</span>
-            <a href="/video-privacy" className="text-red-500 font-semibold whitespace-nowrap">영상정보처리기기 운영관리방침</a>
-            <span className="text-gray-300">|</span>
+          
             <a href="/terms" className="text-gray-600 whitespace-nowrap">이용약관</a>
           </div>
 
