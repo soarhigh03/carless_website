@@ -20,7 +20,7 @@ export default function Header() {
         {/* Left: logo + award badge */}
         <img src="/images/logo.png"  alt="logo"  className="block object-contain" style={{ height: PIC_HEIGHT_PX }} />
         <img src="/images/prize.png" alt="badge" className="block object-contain ml-2" style={{ height: PIC_HEIGHT_PX }} />
-        <span className="ml-auto text-right font-bold text-xs sm:text-sm leading-tight text-black">
+        <span className="ml-auto text-right text-xs sm:text-sm leading-tight text-black">
           자동차 금융 혁신 리더!<br/>
           견적 승부 실전 솔루션 제공!
         </span>

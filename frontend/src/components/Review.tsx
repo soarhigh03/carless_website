@@ -49,7 +49,7 @@ export default function Review() {
               <div className="p-4 flex-1 flex flex-col justify-between">
                 <div>
                   <div className="text-yellow-500 mb-2">{'★★★★★'.slice(0, r.stars)}</div>
-                  <h3 className="font-semibold text-base mb-1">{r.car}</h3>
+                  <h3 className="text-base mb-1">{r.car}</h3>
                   <p className="text-gray-500 text-sm mb-4 line-clamp-3 h-[4.5em] overflow-hidden">
                     {r.text}
                   </p>
