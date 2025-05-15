@@ -18,16 +18,16 @@ export default function SocialBanner() {
 
         {/* SNS icon row */}
         <div className="flex gap-4">
-          <a href="https://blog.naver.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://blog.naver.com/jeps" target="_blank" rel="noopener noreferrer">
             <img src="/images/blog.png" alt="Naver Blog" className="h-8 w-auto" />
           </a>
-          <a href="https://www.youtube.com/watch?v=_oBWpyFmAG0" target="_blank" rel="noopener noreferrer">
+          <a href="https://studio.youtube.com/channel/UC1tom5iu_9nZn4bCX5ruonA/videos/upload?filter=%5B%5D&sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D" target="_blank" rel="noopener noreferrer">
             <img src="/images/youtube.png" alt="YouTube" className="h-8 w-auto" />
           </a>
-          <a href="https://www.instagram.com/ouudangtangtang/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/clcr.co.kr/?hl=ko" target="_blank" rel="noopener noreferrer">
             <img src="/images/instagram.png" alt="Instagram" className="h-8 w-auto" />
           </a>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com/happyhandling" target="_blank" rel="noopener noreferrer">
             <img src="/images/facebook.png" alt="Facebook" className="h-8 w-auto" />
           </a>
         </div>

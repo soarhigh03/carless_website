@@ -42,7 +42,7 @@ export default function ContactForm() {
             />
             <input
               type="text"
-              placeholder="차종 (선택)"
+              placeholder="차종 입력"
               value={form.car_type}
               onChange={e => setForm({ ...form, car_type: e.target.value })}
               className="input"
