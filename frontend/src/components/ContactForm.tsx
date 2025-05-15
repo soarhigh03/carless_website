@@ -64,7 +64,7 @@ export default function ContactForm() {
               />
               <span>
                 <a
-                  href="/privacy"
+                  href="https://clcr.co.kr/privacy"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 underline"
