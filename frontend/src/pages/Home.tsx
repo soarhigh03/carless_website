@@ -58,25 +58,20 @@ useEffect(() => {
     <Header />
     <FloatingPanel />
     
-    <Sec1 />
-    <Sec2 />
-
-    <Sec3 />
-    
-
-    <Sec4 />
-    <SocialBanner />
-
-    
-
-    
-    <Sec6 />
-    <section id="contact-form">
+    {/* Padding Wrapper */}
+    <div className="px-4 md:px-12 lg:px-32">
+      <Sec1 />
+      <Sec2 />
+      <Sec3 />
+      <Sec4 />
+      <SocialBanner />
+      <Sec6 />
+      <section id="contact-form">
         <ContactForm />
-    </section>
-
-    <Sec7 />
-    <Review />
+      </section>
+      <Sec7 />
+      <Review />
+    </div>
 
     <Footer />
       

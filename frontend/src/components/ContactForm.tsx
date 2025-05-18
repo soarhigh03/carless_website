@@ -69,7 +69,7 @@ export default function ContactForm() {
                   rel="noopener noreferrer"
                   className="text-blue-600 underline"
                 >
-                  개인정보 처리방침
+                  개인정보처리방침
                 </a>
                 에 동의합니다.
               </span>
