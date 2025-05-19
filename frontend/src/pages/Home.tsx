@@ -68,9 +68,13 @@ useEffect(() => {
     <div className="px-4 md:px-12 lg:px-32">
       <Sec1 />
       <Sec2 />
-      {benefits.map((benefit) => (
-        <BenefitCard key={benefit.id} {...benefit} />
-      ))}
+      <section className="my-12 overflow-x-auto">
+        <div className="flex flex-row gap-6 px-2 min-w-max">
+          {benefits.map((benefit) => (
+            <BenefitCard key={benefit.id} {...benefit} />
+          ))}
+        </div>
+      </section>
       <Sec3 />
       <Sec4 />
       <SocialBanner />
