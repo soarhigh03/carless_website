@@ -67,7 +67,18 @@ useEffect(() => {
     {/* Padding Wrapper */}
     <div className="px-4 md:px-12 lg:px-32">
       <Sec1 />
-      
+      {/* Benefits Section */}
+      <section className="my-12">
+        <h2 className="text-xl font-bold text-center mb-8">
+          카리스카렌트로 만나는 자동차 금융 솔루션!
+        </h2>
+        <div className="flex flex-row gap-6 overflow-x-auto px-2 min-w-max justify-center">
+          {benefits.map((benefit) => (
+            <BenefitCard key={benefit.id} {...benefit} />
+          ))}
+        </div>
+      </section>
+
       <section className="my-12 overflow-x-auto">
         <div className="flex flex-row gap-6 px-2 min-w-max">
           {benefits.map((benefit) => (
