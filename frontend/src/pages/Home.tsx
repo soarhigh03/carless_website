@@ -15,6 +15,7 @@ import Sec2 from '../components/Sec2';
 import Sec3 from '../components/Sec3';
 import Sec4 from '../components/Sec4';
 import SocialBanner from '../components/SocialBanner';
+import BenefitCard from '../components/BenefitCard';
 import Sec7 from '../components/Sec7';
 import Review from '../components/Review';
 import Sec6 from '../components/Sec6';
@@ -62,6 +63,7 @@ useEffect(() => {
     <div className="px-4 md:px-12 lg:px-32">
       <Sec1 />
       <Sec2 />
+      <BenefitCard />
       <Sec3 />
       <Sec4 />
       <SocialBanner />
