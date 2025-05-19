@@ -8,7 +8,7 @@ export default function BenefitCard({ title, body, image }: Section) {
         <img
           src={`/images/${image}`}
           alt={title}
-          className="w-full max-w-xs h-auto mb-4 object-contain"
+          className="w-full max-w-xs h-auto mb-4 object-contain transition-transform duration-300 ease-in-out hover:scale-105"
         />
       )}
     </div>
