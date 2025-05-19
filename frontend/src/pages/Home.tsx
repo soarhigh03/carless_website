@@ -67,7 +67,7 @@ useEffect(() => {
     {/* Padding Wrapper */}
     <div className="px-4 md:px-12 lg:px-32">
       <Sec1 />
-      <Sec2 />
+      
       <section className="my-12 overflow-x-auto">
         <div className="flex flex-row gap-6 px-2 min-w-max">
           {benefits.map((benefit) => (
