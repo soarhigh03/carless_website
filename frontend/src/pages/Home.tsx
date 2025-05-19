@@ -63,7 +63,9 @@ useEffect(() => {
     <div className="px-4 md:px-12 lg:px-32">
       <Sec1 />
       <Sec2 />
-      <BenefitCard />
+      {benefits.map((benefit) => (
+        <BenefitCard key={benefit.id} {...benefit} />
+      ))}
       <Sec3 />
       <Sec4 />
       <SocialBanner />
