@@ -51,7 +51,12 @@ useEffect(() => {
   }
 
   const hero = sections.find((s) => s.slug === 'hero');
-  const benefits = sections.filter((s) => s.slug.startsWith('benefit-'));
+  const benefits = [
+    { id: 1, slug: 'cheap', title: '저렴함', body: '...', image: 'benefit_cheap.png' },
+    { id: 2, slug: 'easy', title: '쉬움', body: '...', image: 'benefit_easy.png' },
+    { id: 3, slug: 'fast', title: '빠름', body: '...', image: 'benefit_fast.png' },
+  ];
+  
 
   return (
     <>
