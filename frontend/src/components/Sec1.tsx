@@ -17,6 +17,15 @@ export default function Sec1() {
         style={{ maxWidth: '100vw' }}
         onClick={handleClick}
       />
+      
+      <img
+        src="/images/hero-truck.png"
+        alt="Section 1 banner"
+        className="w-full h-auto object-contain block cursor-pointer"
+        style={{ maxWidth: '100vw' }}
+        onClick={handleClick}
+      />
     </section>
+    
   );
 }
