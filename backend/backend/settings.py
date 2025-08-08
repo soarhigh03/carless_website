@@ -28,6 +28,8 @@ if DEBUG:
 else:
     ALLOWED_HOSTS = [h.strip() for h in os.getenv("ALLOWED_HOSTS", "").split(",") if h.strip()]
 
+#ALLOWED_HOSTS = ["localhost", "127.0.0.1", "clcr.co.kr", "www.clcr.co.kr"]
+
 print(f"📂 BASE_DIR: {BASE_DIR}")
 print(f"🔍 dotenv_path: {dotenv_path}  (exists: {dotenv_path.exists()})")
 
