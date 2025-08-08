@@ -12,7 +12,7 @@ def send_inquiry_email(name: str, phone: str, message: str):
     send_mail(
         subject,
         body,
-        'ehdgnlans@gmail.com',               # 발신자
-        ['ehdgnlans@gmail.com'],             # 수신자 리스트
+        'haebong@gmail.com',               # 발신자
+        ['haebong@gmail.com'],             # 수신자 리스트
         fail_silently=False,
     )
