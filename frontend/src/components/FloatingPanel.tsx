@@ -17,7 +17,7 @@ export default function FloatingPanel() {
       >
         <div className="text-2xl mb-1">📞</div>
         <div className="leading-tight text-sm">
-          저신용렌트<br />1600-5486
+          상담신청<br />1600-5486
         </div>
       </a>
 
